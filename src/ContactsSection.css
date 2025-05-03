@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #ff8a00;
+    --secondary-color: #e52e71;
+    --text-color: white;
+    --card-bg: rgba(255, 255, 255, 0.1);
+  }
+  
+  .contacts-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 5;
+  }
+  
+  .contacts-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background:  linear-gradient(90deg, #eb8510, #ff5500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+  }
+  
+  .contacts-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .contacts-info {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .contact-item {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-label {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .contact-value {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-value:hover {
+    color: var(--primary-color);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .social-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .download-btn {
+    display: inline-block;
+    background:  linear-gradient(90deg, #eb8510, #ff5500);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contacts-quote {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-style: italic;
+  }
+  
+  .quote-text {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .contacts-title {
+      font-size: 2rem;
+    }
+    
+    .contacts-content {
+      gap: 20px;
+    }
+    
+    .contacts-info, .contacts-quote {
+      padding: 20px;
+    }
+    
+    .quote-text {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contacts-section {
+      padding: 15px;
+    }
+    
+    .contacts-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-label {
+      font-size: 1.1rem;
+    }
+    
+    .contact-value {
+      font-size: 1rem;
+    }
+    
+    .download-btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+    
+    .quote-text {
+      font-size: 1rem;
+    }
+  }

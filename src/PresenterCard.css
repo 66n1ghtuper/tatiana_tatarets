@@ -1,0 +1,639 @@
+/* PresenterCard.css */
+.presenter-container {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    z-index: 3;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .info-container {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    margin: 20px;
+    transition: transform 0.5s ease;
+    margin-top: 100px;
+  }
+  
+  .info-container:hover {
+    transform: translateY(-10px);
+  }
+  
+  .text-content {
+    flex: 1;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .greeting {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #f8f8f8;
+    opacity: 0.9;
+  }
+  
+  .name {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .experience {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 40px;
+  }
+  
+  .experience .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5rem;
+  }
+  
+  .mission {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  .highlight {
+    font-weight: 600;
+    color: var(--highlight-color);
+    text-shadow: 0 0 10px rgba(255, 138, 0, 0.3);
+  }
+  
+  .features-list {
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  
+  .features-list li {
+    position: relative;
+    margin-bottom: 12px;
+    list-style-type: none;
+    padding-left: 30px;
+    font-size: 1rem;
+  }
+  
+  .features-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #e52e71;
+    font-weight: bold;
+  }
+  
+  .presenter-image-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    animation: rotateFrame 20s linear infinite;
+  }
+  
+  @keyframes rotateFrame {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .presenter-image {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+  }
+  
+  .presenter-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .image-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(229, 46, 113, 0.3) 0%, transparent 70%);
+    animation: pulseGlow 3s infinite alternate;
+  }
+  
+  @keyframes pulseGlow {
+    0% { opacity: 0.5; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.05); }
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 992px) {
+    .info-container {
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 30px;
+    }
+    
+    .text-content {
+      padding-right: 0;
+      padding-top: 30px;
+      text-align: center;
+    }
+    
+    .presenter-image-container {
+      margin-bottom: 20px;
+      width: 250px;
+      height: 250px;
+      min-width: 250px;
+    }
+    
+    .features-list {
+      text-align: left;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .greeting {
+      font-size: 1.8rem;
+    }
+    
+    .name {
+      font-size: 2.2rem;
+    }
+    
+    .info-container {
+      padding: 20px;
+      margin: 10px;
+    }
+  }
+  /* PresenterCard.css */
+/* Все предыдущие стили остаются, добавляем новые */
+
+.slider-content {
+    margin: 20px 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .slide-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--highlight-color);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .slide-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-gradient);
+  }
+  
+  .ctar-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .ctar-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .quote {
+    font-style: italic;
+    margin: 20px 0;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .quote::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-size: 2rem;
+    color: var(--highlight-color);
+  }
+  
+  .ctar-button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+  
+  .ctar-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .slider-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 5;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  
+  .indicator.active {
+    background: white;
+    transform: scale(1.2);
+  }
+  
+  /* Анимация смены слайдов */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .slider-content, .presenter-image {
+    animation: fadeIn 0.8s ease;
+  }
+  
+  /* Адаптивные стили */
+  @media (max-width: 992px) {
+    .slide-title {
+      font-size: 1.5rem;
+    }
+    
+    .ctar-text {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .slide-title {
+      font-size: 1.3rem;
+    }
+    
+    .quote {
+      font-size: 0.9rem;
+    }
+    
+    .ctar-button {
+      padding: 10px 20px;
+    }
+  }
+  /* Добавьте это в PresenterCard.css */
+
+.main-slide-content {
+    margin-bottom: 20px;
+  }
+  
+  .main-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 3px solid var(--highlight-color);
+    position: relative;
+  }
+  
+  .main-description:before {
+    content: "✧";
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+  }
+  
+  .main-description:after {
+    content: "✧";
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+  }
+  
+  /* Адаптивные стили */
+  @media (max-width: 992px) {
+    .main-description {
+      font-size: 1.1rem;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .main-description {
+      font-size: 1rem;
+      padding: 12px;
+      margin-top: 15px;
+    }
+    
+    .main-description:before,
+    .main-description:after {
+      font-size: 1.2rem;
+    }
+    
+    .main-description:before {
+      left: -10px;
+      top: -10px;
+    }
+    
+    .main-description:after {
+      right: -10px;
+      bottom: -10px;
+    }
+  }
+  /* Модальное окно - оптимизированная версия */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+  }
+  
+  .modal-content {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 30px 30px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-out;
+    z-index: 1000;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .modal-close-btn:hover {
+    color: #ff8a00;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+  }
+  
+  /* Заголовок */
+  .modal-title {
+    font-size: 2rem;
+    margin: 0 0 30px 0;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    line-height: 1.3;
+  }
+  
+  /* Форма */
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .form-group label::before {
+    content: "•";
+    color: #ff8a00;
+    position: absolute;
+    left: 5px;
+    top: 0;
+    font-size: 1.2rem;
+  }
+  
+  /* Поля ввода - четкие размеры */
+  .form-control {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    height: 48px; /* Фиксированная высота */
+    box-sizing: border-box;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #ff8a00;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 138, 0, 0.2);
+  }
+  
+  /* Текстовое поле */
+  .textarea-control {
+    height: 200px; /* Фиксированная высота */
+    min-height: 200px;
+    resize: vertical;
+    line-height: 1.5;
+    padding-top: 12px;
+  }
+  
+  /* Кнопка отправки */
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #eb8510, #ff5500);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    height: 52px; /* Фиксированная высота */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 46, 113, 0.4);
+  }
+  
+  .submit-btn:disabled {
+    background: linear-gradient(90deg, #666, #888);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .modal-content {
+      padding: 35px 25px 25px;
+      max-width: 90%;
+    }
+    
+    .modal-title {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+    
+    .form-control {
+      padding: 12px 16px;
+      height: 44px;
+    }
+    
+    .textarea-control {
+      height: 120px;
+      min-height: 120px;
+    }
+    
+    .submit-btn {
+      padding: 14px;
+      height: 48px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .presenter-container {
+margin-top: 100px;
+    }
+    .modal-content {
+      padding: 30px 20px 20px;
+    border-radius: 12px;
+    max-width: 90%;
+    }
+    
+    .modal-title {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+    
+    .form-control {
+      padding: 11px 14px;
+      height: 42px;
+      font-size: 0.95rem;
+    }
+    
+    .textarea-control {
+      height: 110px;
+      min-height: 110px;
+    }
+    
+    .submit-btn {
+      padding: 12px;
+      height: 46px;
+      font-size: 1rem;
+    }
+  }
