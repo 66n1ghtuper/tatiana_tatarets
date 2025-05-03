@@ -12,12 +12,13 @@
     padding: 20px;
     position: relative;
     z-index: 5;
+    box-sizing: border-box;
   }
   
   .contacts-title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    background:  linear-gradient(90deg, #eb8510, #ff5500);
+    background: linear-gradient(90deg, #eb8510, #ff5500);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -84,7 +85,7 @@
   
   .download-btn {
     display: inline-block;
-    background:  linear-gradient(90deg, #eb8510, #ff5500);
+    background: linear-gradient(90deg, #eb8510, #ff5500);
     color: white;
     padding: 12px 25px;
     border-radius: 30px;
@@ -117,19 +118,30 @@
     margin: 0;
   }
   
+
   @media (max-width: 768px) {
+    .contacts-section {
+      padding: 20px 15px;
+      width: calc(100% - 30px); 
+    }
+  
     .contacts-title {
       font-size: 2rem;
     }
-    
-    .contacts-content {
-      gap: 20px;
-    }
-    
-    .contacts-info, .contacts-quote {
+  
+    .contacts-info,
+    .contacts-quote {
       padding: 20px;
     }
-    
+  
+    .contact-label {
+      font-size: 1.1rem;
+    }
+  
+    .contact-value {
+      font-size: 1rem;
+    }
+  
     .quote-text {
       font-size: 1.1rem;
     }
@@ -137,28 +149,35 @@
   
   @media (max-width: 480px) {
     .contacts-section {
-      padding: 15px;
+      padding: 15px 10px;
+      width: calc(100% - 10px); 
     }
-    
+  
     .contacts-title {
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
     }
-    
-    .contact-label {
-      font-size: 1.1rem;
+  
+    .contacts-content {
+      gap: 25px;
     }
-    
-    .contact-value {
-      font-size: 1rem;
+  
+    .contacts-info,
+    .contacts-quote {
+      padding: 15px;
     }
-    
+  
+    .contact-item {
+      margin-bottom: 15px;
+    }
+  
+    .social-links {
+      justify-content: center;
+    }
+  
     .download-btn {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-    }
-    
-    .quote-text {
-      font-size: 1rem;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
     }
   }
